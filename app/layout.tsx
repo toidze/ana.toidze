@@ -10,7 +10,7 @@ const epilogue = Epilogue({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ana-portfolio.example.com"),
+  metadataBase: new URL("https://ana-toidze.vercel.app"),
   title: {
     default: "Ana Toidze — Product Designer",
     template: "%s — Ana Toidze",
