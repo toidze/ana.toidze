@@ -19,7 +19,6 @@ export type SiteSettings = {
   logoCloudLabel: string;
   logoCloud: LogoCloudItem[];
   resumeUrl: string | null;
-  navLinks: NavLink[];
   ctaLabel: string;
   ctaHref: string;
   contactHeading: string;

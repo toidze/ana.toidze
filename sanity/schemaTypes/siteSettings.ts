@@ -76,22 +76,6 @@ export const siteSettings = defineType({
       ],
     }),
     defineField({
-      name: "navLinks",
-      title: "Nav links",
-      type: "array",
-      group: "nav",
-      of: [
-        defineArrayMember({
-          type: "object",
-          fields: [
-            { name: "label", type: "string", title: "Label" },
-            { name: "href", type: "string", title: "Href" },
-          ],
-          preview: { select: { title: "label", subtitle: "href" } },
-        }),
-      ],
-    }),
-    defineField({
       name: "resume",
       title: "Résumé (PDF)",
       description:

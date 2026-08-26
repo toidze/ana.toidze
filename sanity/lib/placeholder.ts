@@ -24,10 +24,6 @@ export const placeholderSiteSettings: SiteSettings = {
     { name: "netguru", logo: ph(140, 48) },
   ],
   resumeUrl: null,
-  navLinks: [
-    { label: "Home", href: "/" },
-    { label: "Projects", href: "/#projects" },
-  ],
   ctaLabel: "Contact",
   ctaHref: "#contact",
   contactHeading: "Seem interested?",

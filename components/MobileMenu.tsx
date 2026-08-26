@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Grip, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { NAV_LINKS } from "@/lib/nav";
 import { resumeHref } from "@/lib/resume";
 import type { SiteSettings } from "@/types";
 import { AIOverviewButton } from "./AIOverviewButton";
@@ -61,7 +62,7 @@ export function MobileMenu({ settings }: { settings: SiteSettings }) {
               onClick={() => setOpen(false)}
               className="flex flex-col items-start gap-6 px-6 pt-12"
             >
-              {settings.navLinks.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}

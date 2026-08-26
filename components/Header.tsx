@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NAV_LINKS } from "@/lib/nav";
 import { resumeHref } from "@/lib/resume";
 import type { SiteSettings } from "@/types";
 import { AIOverviewButton } from "./AIOverviewButton";
@@ -18,7 +19,7 @@ export function Header({ settings }: { settings: SiteSettings }) {
         >
           {/* Desktop nav */}
           <div className="hidden items-center gap-10 lg:flex">
-            {settings.navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}

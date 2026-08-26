@@ -15,15 +15,14 @@ export const siteSettingsQuery = groq`*[_type == "siteSettings"][0]{
   heroHeading,
   heroIntro,
   logoCloudLabel,
-  "logoCloud": logoCloud[]{ name, "logo": logo${imageFragment} },
+  "logoCloud": coalesce(logoCloud[]{ name, "logo": logo${imageFragment} }, []),
   "resumeUrl": resume.asset->url,
-  "navLinks": navLinks[]{ label, href },
   ctaLabel,
   ctaHref,
   contactHeading,
   contactSubtext,
   email,
-  "socials": socials[]{ label, url },
+  "socials": coalesce(socials[]{ label, url }, []),
   footerText
 }`;
 
@@ -43,12 +42,12 @@ export const projectBySlugQuery = groq`*[_type == "project" && slug.current == $
   "slug": slug.current,
   isNew,
   description,
-  tags,
+  "tags": coalesce(tags, []),
   "heroImage": heroImage${imageFragment},
   "thumbnail": thumbnail${imageFragment},
-  "details": details[]{ label, body },
-  "tools": tools[]{ name, "icon": icon${imageFragment} },
-  "gallery": gallery[]{ "image": image${imageFragment}, caption }
+  "details": coalesce(details[]{ label, body }, []),
+  "tools": coalesce(tools[]{ name, "icon": icon${imageFragment} }, []),
+  "gallery": coalesce(gallery[]{ "image": image${imageFragment}, caption }, [])
 }`;
 
 export const otherProjectsQuery = groq`*[_type == "project" && slug.current != $slug] | order(order asc, _createdAt desc) ${projectSummaryProjection}`;
