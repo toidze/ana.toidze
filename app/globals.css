@@ -14,6 +14,18 @@
 
   /* Layout: 1440 artboard = 1280 content + 80px gutters each side. */
   --container-max: 1440px;
+
+  /* Mobile logo marquee (see LogoCloud). */
+  --animate-marquee: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* Light-only design (matches Figma). */
