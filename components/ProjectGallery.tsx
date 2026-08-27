@@ -11,8 +11,9 @@ import { Reveal } from "./Reveal";
 
 /**
  * Project gallery — Figma "Section" (6:190).
- * Each row: caption (340px gutter, 18px, hugs the image) + image (900×562),
- * alternating which side the image is on. Click opens the full-size lightbox.
+ * Each row: caption (340px gutter, 18px, hugs the image) + image (fixed 70%
+ * width, height following the image's own proportions), alternating which side
+ * the image is on. Click opens the full-size lightbox.
  */
 export function ProjectGallery({ items }: { items: GalleryItem[] }) {
   const [index, setIndex] = useState(-1);
@@ -56,7 +57,6 @@ export function ProjectGallery({ items }: { items: GalleryItem[] }) {
               >
                 <ImageFrame
                   image={item.image}
-                  aspect="900 / 562"
                   sizes="(max-width: 1024px) 100vw, 70vw"
                   hoverZoom
                 />
