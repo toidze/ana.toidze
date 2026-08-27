@@ -8,7 +8,14 @@ const AI_OVERVIEW_URL = `https://www.google.com/search?udm=50&q=${encodeURICompo
   AI_QUERY
 )}`;
 
-export function AIOverviewButton({ className }: { className?: string }) {
+export function AIOverviewButton({
+  className,
+  size = "md",
+}: {
+  className?: string;
+  size?: "md" | "lg";
+}) {
+  const lg = size === "lg";
   return (
     <a
       href={AI_OVERVIEW_URL}
@@ -24,11 +31,16 @@ export function AIOverviewButton({ className }: { className?: string }) {
       <img
         src="/gemini-sparkle.svg"
         alt=""
-        width={24}
-        height={24}
-        className="size-6 shrink-0"
+        width={lg ? 30 : 24}
+        height={lg ? 30 : 24}
+        className={cn("shrink-0", lg ? "size-[30px]" : "size-6")}
       />
-      <span className="text-[20px] leading-[22px] text-ink transition-colors duration-200 group-hover:text-muted">
+      <span
+        className={cn(
+          "leading-none text-ink transition-colors duration-200 group-hover:text-muted",
+          lg ? "text-[28px]" : "text-[20px] leading-[22px]"
+        )}
+      >
         AI Overview
       </span>
     </a>

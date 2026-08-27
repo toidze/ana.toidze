@@ -57,16 +57,17 @@ export function MobileMenu({ settings }: { settings: SiteSettings }) {
               </button>
             </div>
 
-            {/* Any tap inside closes the menu. */}
+            {/* Items centered on all sides; large, centered, well-spaced.
+                Any tap inside closes the menu. */}
             <nav
               onClick={() => setOpen(false)}
-              className="flex flex-col items-start gap-6 px-6 pt-12"
+              className="flex flex-1 flex-col items-center justify-center gap-8 px-6 pb-[68px] text-center"
             >
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-[20px] leading-[22px] text-ink"
+                  className="text-[28px] leading-none text-ink"
                 >
                   {link.label}
                 </Link>
@@ -75,17 +76,15 @@ export function MobileMenu({ settings }: { settings: SiteSettings }) {
                 <a
                   href={resumeHref(settings)}
                   download
-                  className="text-[20px] leading-[22px] text-ink"
+                  className="text-[28px] leading-none text-ink"
                 >
                   Resume
                 </a>
               )}
-              <AIOverviewButton />
-              <div className="pt-6">
-                <Button variant="solid" href={`mailto:${settings.email}`}>
-                  {settings.ctaLabel}
-                </Button>
-              </div>
+              <AIOverviewButton size="lg" />
+              <Button variant="solid" href={`mailto:${settings.email}`}>
+                {settings.ctaLabel}
+              </Button>
             </nav>
           </motion.div>
         )}
