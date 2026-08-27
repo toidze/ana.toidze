@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { NAV_LINKS } from "@/lib/nav";
 import { resumeHref } from "@/lib/resume";
 import type { SiteSettings } from "@/types";
 import { AIOverviewButton } from "./AIOverviewButton";
+import { ScrollLink } from "./ScrollLink";
 import { Button } from "./Button";
 import { MobileMenu } from "./MobileMenu";
 import { Reveal } from "./Reveal";
@@ -20,13 +20,13 @@ export function Header({ settings }: { settings: SiteSettings }) {
           {/* Desktop nav */}
           <div className="hidden items-center gap-10 lg:flex">
             {NAV_LINKS.map((link) => (
-              <Link
+              <ScrollLink
                 key={link.label}
                 href={link.href}
                 className="text-[20px] leading-[22px] text-ink transition-colors duration-200 hover:text-muted"
               >
                 {link.label}
-              </Link>
+              </ScrollLink>
             ))}
             {settings.resumeUrl && (
               <a

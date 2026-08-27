@@ -2,13 +2,13 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Grip, X } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { NAV_LINKS } from "@/lib/nav";
 import { resumeHref } from "@/lib/resume";
 import type { SiteSettings } from "@/types";
 import { AIOverviewButton } from "./AIOverviewButton";
 import { Button } from "./Button";
+import { ScrollLink } from "./ScrollLink";
 
 export function MobileMenu({ settings }: { settings: SiteSettings }) {
   const [open, setOpen] = useState(false);
@@ -64,13 +64,14 @@ export function MobileMenu({ settings }: { settings: SiteSettings }) {
               className="flex flex-1 flex-col items-center justify-center gap-8 px-6 pb-[68px] text-center"
             >
               {NAV_LINKS.map((link) => (
-                <Link
+                <ScrollLink
                   key={link.label}
                   href={link.href}
+                  onClick={() => setOpen(false)}
                   className="text-[28px] leading-none text-ink"
                 >
                   {link.label}
-                </Link>
+                </ScrollLink>
               ))}
               {settings.resumeUrl && (
                 <a
