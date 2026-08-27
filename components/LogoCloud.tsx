@@ -47,7 +47,7 @@ export function LogoCloud({ settings }: { settings: SiteSettings }) {
         {settings.logoCloudLabel}
       </p>
       {/* Mobile: single-row auto-scroll marquee. Desktop (lg): static wrapped row. */}
-      <div className="mt-6 overflow-hidden lg:mt-8 lg:overflow-visible motion-reduce:overflow-visible">
+      <div className="marquee-fade mt-6 overflow-hidden lg:mt-8 lg:overflow-visible motion-reduce:overflow-visible">
         <ul className="flex w-max animate-marquee items-center gap-x-8 lg:w-auto lg:animate-none lg:flex-wrap lg:gap-x-16 lg:gap-y-5 motion-reduce:w-auto motion-reduce:animate-none motion-reduce:flex-wrap">
           {logos.map((item, i) => (
             <LogoItem key={`a-${item.name}-${i}`} item={item} />

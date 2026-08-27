@@ -28,6 +28,39 @@
   }
 }
 
+/* Soft edge fade for the mobile logo marquee so logos ease out instead of
+   cutting off abruptly at the left/right edges. Only while scrolling on
+   mobile — disabled on desktop and under reduced motion, where the row wraps
+   statically and every logo is fully visible. */
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 2rem,
+    #000 calc(100% - 2rem),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 2rem,
+    #000 calc(100% - 2rem),
+    transparent 100%
+  );
+}
+@media (min-width: 1024px) {
+  .marquee-fade {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-fade {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
 /* Light-only design (matches Figma). */
 html {
   -webkit-font-smoothing: antialiased;
