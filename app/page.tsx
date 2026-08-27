@@ -23,7 +23,7 @@ export default async function HomePage() {
 
           <div className="border-t border-line" />
 
-          <section id="projects">
+          <section id="projects" className="scroll-mt-8 lg:scroll-mt-16">
             <Reveal>
               <SectionHeading>My projects</SectionHeading>
             </Reveal>

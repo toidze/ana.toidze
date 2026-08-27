@@ -34,6 +34,13 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+/* Smooth anchor scrolling (e.g. "Projects" → #projects); off for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background: var(--color-paper);
   color: var(--color-ink);

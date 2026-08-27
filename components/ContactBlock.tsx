@@ -13,7 +13,7 @@ export function ContactBlock({ settings }: { settings: SiteSettings }) {
   const linkClass =
     "text-[20px] leading-[22px] text-ink transition-colors duration-200 hover:text-accent";
   return (
-    <section id="contact">
+    <section id="contact" className="scroll-mt-8 lg:scroll-mt-16">
       <div>
         <h2 className="text-[34px] font-semibold leading-[40px] text-ink lg:text-[64px] lg:leading-[76px]">
           {settings.contactHeading}
