@@ -11,21 +11,24 @@ const AI_OVERVIEW_URL = `https://www.google.com/search?udm=50&q=${encodeURICompo
 export function AIOverviewButton({
   className,
   size = "md",
+  layout = "row",
 }: {
   className?: string;
   size?: "md" | "lg";
+  layout?: "row" | "stack";
 }) {
   const lg = size === "lg";
+  const layoutCls =
+    layout === "stack"
+      ? "flex-col items-center gap-2" // sparkle on top of the text, centered
+      : "flex-row-reverse items-center gap-4 lg:flex-row";
   return (
     <a
       href={AI_OVERVIEW_URL}
       target="_blank"
       rel="noreferrer"
       title={`Ask Google AI: ${AI_QUERY}`}
-      className={cn(
-        "group inline-flex shrink-0 flex-row-reverse items-center gap-4 lg:flex-row",
-        className
-      )}
+      className={cn("group inline-flex shrink-0", layoutCls, className)}
     >
       {/* eslint-disable-next-line @next/next/no-img-element -- static SVG asset */}
       <img

@@ -81,8 +81,12 @@ export function MobileMenu({ settings }: { settings: SiteSettings }) {
                   Resume
                 </a>
               )}
-              <AIOverviewButton size="lg" />
-              <Button variant="solid" href={`mailto:${settings.email}`}>
+              <AIOverviewButton size="lg" layout="stack" />
+              <Button
+                variant="solid"
+                href={`mailto:${settings.email}`}
+                className="mt-6"
+              >
                 {settings.ctaLabel}
               </Button>
             </nav>
